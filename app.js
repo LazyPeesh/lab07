@@ -14,13 +14,17 @@ var mongoose = require('mongoose');
 var uri = "mongodb://127.0.0.1:27017/lab07";
 var cloud = "mongodb+srv://mongo:mongo@cluster0.cdadmxu.mongodb.net/lab07";
 
-mongoose.connect(cloud)
+mongoose.connect(uri)
   .then(() => { console.log('connect to DB success!!') })
   .catch((err) => { console.error(err) });
 
 // Cài đặt và cấu hình body-parser
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// Khai báo 
+var hbs = require('hbs');
+hbs.registerHelper('dateFormat', require('handlebars-dateformat')); 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

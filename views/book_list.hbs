@@ -1,5 +1,12 @@
 {{!-- table>(tr>th*5)+(tr>td*5) --}}
 <table class="table table-success text-center">
+    <tr>
+        <th class="h2 text-danger" colspan="4">BOOK LIST</th>
+        <th>
+            <a class="btn btn-secondary" href="/add">Add</a>
+            <a onclick="return confirm('Are you sure?')" class="btn btn-primary" href="/drop">Drop</a>
+        </th>
+    </tr>
     <tr class="h4 text-primary">
         <th>Title</th>
         <th>Author</th>
@@ -14,11 +21,11 @@
         <td>{{ author }}</td>
         <td>${{ price }}</td>
         <td>
-            <a href=""><img src="{{ cover }}" alt="" width="150px" height="150px"></a>
+            <a href="/detail/{{_id}}"><img src="{{ cover }}" alt="" width="150px" height="150px"></a>
         </td>
         <td>
-            <a class="btn btn-warning" href="">Edit</a>
-            <a onclick="return confirm('Are you sure?')" class="btn btn-danger" href="">Delete</a>
+            <a class="btn btn-warning" href="/edit/{{_id}}">Edit</a>
+            <a onclick="return confirm('Are you sure?')" class="btn btn-danger" href="/delete/{{_id}}">Delete</a>
         </td>
     </tr>
     {{/each}}

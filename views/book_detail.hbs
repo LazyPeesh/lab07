@@ -1,0 +1,47 @@
+{{!-- .row>.col*2 --}}
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <h4>{{ book.title }}</h4>
+            <iframe width="420" height="315" src="https://www.youtube.com/embed/{{ book.video }}"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+
+        <div class="col">
+            {{!-- table>tr*4>th+td --}}
+
+            <table class="table table-bordered">
+                <tr>
+                    <th class="bg-warning" colspan="2">Book Info</th>
+                </tr>
+                <tr>
+                    <th>Book Author</th>
+                    <td>{{ book.author }}</td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>${{ book.price }}</td>
+                </tr>
+                <tr>
+                    <th>In stock</th>
+                    <td>{{ book.quantity }}</td>
+                </tr>
+                <tr>
+                    <th>Publishing Date</th>
+                    <td>
+                        {{ dateFormat book.date "DD/MM/YYYY" }}
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <form action="#" method="POST"></form>
+                        <input type="number" min="1" max="{{ book.quantity }}">
+                        <a class="btn btn-primary" href="#">Order</a>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
