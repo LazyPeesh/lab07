@@ -11,7 +11,7 @@ var app = express();
 
 // Cài đặt và cấu hình mongoose
 var mongoose = require('mongoose');
-var uri = "mongodb://127.0.0.1:27017/book";
+var uri = "mongodb://127.0.0.1:27017/lab07";
 mongoose.connect(uri)
   .then(() => { console.log('connect to DB success!!') })
   .catch((err) => { console.error(err) });
