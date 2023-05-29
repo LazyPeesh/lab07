@@ -1,0 +1,27 @@
+<table class="table table-success text-center">
+    <tr>
+        <th class="h2 text-danger" colspan="4">AUTHOR LIST</th>
+        <th>
+            <a class="btn btn-secondary" href="/add">Add</a>
+            <a onclick="return confirm('Are you sure?')" class="btn btn-primary" href="/drop">Drop</a>
+        </th>
+    </tr>
+    <tr class="h4 text-primary">
+        <th>Name</th>
+        <th>Age</th>
+        <th>Date of birth</th>
+        <th>Email</th>
+        <th>Book published</th>
+    </tr>
+
+    {{#each authors }}
+    <tr>
+        <td>{{ name }}</td>
+        <td>{{ age }}</td>
+        <td>{{ dateFormat dob "DD/MM/YYYY" }}</td>
+        <td>{{ email }}</td>
+        <td>{{ book_published }}</td>
+    </tr>
+    {{/each}}
+
+</table>

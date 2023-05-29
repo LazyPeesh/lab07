@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
   // select * from book
   var books = await BookModel.find({});
   // res.send(books);
-  res.render('book_list', { books: books })
+  res.render('book_list', { books: books });
 });
 
 router.get('/delete/:id', async (req, res) => {
