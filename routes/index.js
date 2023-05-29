@@ -42,9 +42,10 @@ router.get('/detail/:id', async (req, res) => {
 
 router.get('/add', async (req, res) => {
 
-})
+});
+
 router.get('/edit/:id', async (req, res) => {
-  
-})
+
+});
 
 module.exports = router;
