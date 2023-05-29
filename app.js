@@ -50,7 +50,7 @@ app.use(function (err, req, res, next) {
 });
 
 // Set cổng cho server 
-var port = 3001;
+var port = process.env.PORT || 3001;
 app.listen(port);
 
 module.exports = app;
