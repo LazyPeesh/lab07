@@ -5,7 +5,8 @@ var router = express.Router();
 router.get('/', async (req, res) => {
   // select * from book
   var books = await BookModel.find({});
-  res.send(books);
+  // res.send(books);
+  res.render('book_list', { books: books })
 });
 
 module.exports = router;

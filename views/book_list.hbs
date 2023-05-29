@@ -1,0 +1,26 @@
+{{!-- table>(tr>th*5)+(tr>td*5) --}}
+<table class="table table-success text-center">
+    <tr class="h4 text-primary">
+        <th>Title</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Cover</th>
+        <th>Menu</th>
+    </tr>
+
+    {{#each books }}
+    <tr>
+        <td>{{ title }}</td>
+        <td>{{ author }}</td>
+        <td>${{ price }}</td>
+        <td>
+            <a href=""><img src="{{ cover }}" alt="" width="150px" height="150px"></a>
+        </td>
+        <td>
+            <a class="btn btn-warning" href="">Edit</a>
+            <a onclick="return confirm('Are you sure?')" class="btn btn-danger" href="">Delete</a>
+        </td>
+    </tr>
+    {{/each}}
+
+</table>
