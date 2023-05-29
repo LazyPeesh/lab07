@@ -12,7 +12,9 @@ var app = express();
 // Cài đặt và cấu hình mongoose
 var mongoose = require('mongoose');
 var uri = "mongodb://127.0.0.1:27017/lab07";
-mongoose.connect(uri)
+var cloud = "mongodb+srv://mongo:mongo@cluster0.cdadmxu.mongodb.net/lab07";
+
+mongoose.connect(cloud)
   .then(() => { console.log('connect to DB success!!') })
   .catch((err) => { console.error(err) });
 
